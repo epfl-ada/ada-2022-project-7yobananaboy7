@@ -33,7 +33,7 @@ The goal of this project is to first investigate how to get people engaged in a 
    - We have to find a certain metric from the Player’s Graph or use ‘semantic distance’ as proposed in the paper to identify how far people were to their goals when they quit their game.
    - We use logistic regression to analyze the relationship between path length/duration/other features to be found with whether people quit the game.
    - We combine in-degree, out-degree and number of accesses (weight in the paths’ graph) to find potential hub articles, and then deduce from each path at which stage the player quitted or where there was no obvious strategy at all.
-   - We merge the nodes with the same concepts and see how the resulting graph is structured. Our hypothesis is to find some hard-to-reach that we would verify via hypothesis testing.
+   - We merge the nodes with the same concepts and see how the resulting graph is structured. We generate some stats (from the distribution of in-degree or out-degree, weights of edges and nodes) and then confirm or reject our hypothesis via hypothesis testing.
 
 
    Game History refers to the history of each player’s runs, whether finished or not. We tried to get players' history in term or how their games ended up (finished, restart, timeout). Then we use a logistic regression to examine how much the number of previous finishes, restarts and timeouts have an influence of the next run’s quitting or not. And we can also use clustering algorithms to find patterns of player’s Game History.

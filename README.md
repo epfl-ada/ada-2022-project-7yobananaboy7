@@ -32,7 +32,7 @@ The goal of this project is to first investigate how to get people engaged in a 
    We deal with the situations separately:
    - We have to find a certain metric from the Player’s Graph or use ‘semantic distance’ as proposed in the paper to identify how far people were to their goals when they quit their game.
    - We use logistic regression to analyze the relationship between path length/duration/other features to be found with whether people quit the game.
-   - We combine in-degree, out-degree and number of accesses (weight in the paths’ graph) to find potential hub articles, and then deduce from each path at which stage the player quitted or where there was no obvious strategy at all.
+   - We combine in-degree, out-degree and number of accesses (weight in the paths’ graph) to find potential hub articles, and then deduce from each path at which stage the player quit or where there was no obvious strategy at all.
    - We merge the nodes with the same concepts and see how the resulting graph is structured. We generate some stats (from the distribution of in-degree or out-degree, weights of edges and nodes) and then confirm or reject our hypothesis via hypothesis testing.
 
 
@@ -59,7 +59,7 @@ The goal of this project is to first investigate how to get people engaged in a 
 - Mengjie on 3, 5, 7, 8, 9
 - Mathieu on 4, 6, 7, 8, 9
 
-### (Optional) Questions for TAs
+### Questions for TAs
 
 - Preprocess data, how to handle outliers? 
 How to handle values for finished paths for example that are at path_length 0 and time 0? How do we set a threshold.

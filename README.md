@@ -1,4 +1,4 @@
-# Milestone 2 - 
+# Milestone 2 - The tale of the unfinished paths
 
 ### Abstract
 Wikispeedia is an online game based on Wikipedia. A player has to reach an article from a not related article, only by using hyperlinks in the articles encountered [[1]](http://infolab.stanford.edu/~west1/pubs/West-Pineau-Precup_IJCAI-09.pdf). By analyzing the graphs and data collected from people playing these games a lot of interesting questions concerning the searching behaviour of humans can be answered or also propositions of how articles should be designed can be done. To do this a lot of data is needed. But how can you get people to play and finish the game maybe even multiple times? What motivates people to finish the task and do not give up? With this work these questions are answered by propsing a set up for the game that is likely to motivate people to play multiple times so that more data for analyzation purposes can be generated. 

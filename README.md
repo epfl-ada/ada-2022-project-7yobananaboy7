@@ -10,33 +10,30 @@ What makes people restart, give up ?
 Understand what is an easy game, is it in terms of distance in the link paths or in terms of the distance in the graph with the player paths.
 
 ### Methods
+1. Preprocessing of the data.
 
-When describing the relevant aspects of the data, and any other datasets you may intend to use, you should in particular show (non-exhaustive list):
+   * Invalid or Less valuable data: We find some ‘cheating’ attempts with duration less than 1 second and path length less than 2. We filtered out those data. In addition, we excluded the paths with length shorter than 4 (about 8 percent) when analyzing the strategy stages of players.
 
-That you can handle the data in its size.
-That you understand what’s in the data (formats, distributions, missing values, correlations, etc.).
-That you considered ways to enrich, filter, transform the data according to your needs.
-That you have a reasonable plan and ideas for methods you’re going to use, giving their essential mathematical details in the notebook.
-That your plan for analysis and communication is reasonable and sound, potentially discussing alternatives to your choices that you considered but dropped.
+   * Organizing the data: We formed two graphs from the data we loaded. One graph is the paths’ graph (or referred to as Player’s Graph). This graph is derived from the paths of the players of different attempts. It’s a weighted directional graph. The weight for each edge is the number of attempts having that path. The other graph is the ideal graph (or referred to as Machine’s Graph). It’s generated from the links of different articles. Initial analysis suggests the graphs are very different. Other data is stored in dataframes, such that we can perform regression analysis or more complex methods.
 
+2. Firstly, we try to find patterns from player’s History which can be categorized into two kinds: In-Run History and Game History. In-Run History refers to the path one player has taken. We examine the probable reasons for quitting during a run such as:
 
-What analysis do we want to do ? 
-Difference between restart and finished are only in time not in term of pathLength
-Difference between restart and timeout 
-We need to go deeper in the graph 
-Look at the shortest path in the players graph with the weights 
-Find more features to use in the logistic regression 
-Type of concepts people used 
+   * People find themselves getting farther from their goal.
+   * People get tired of clicking through pages or spend too much time and lose patience.
+   * People get stuck at different ‘game stages’ (‘Going to a Hub’ stage or ‘Converging’ stage or purely have no strategy at all).
+   * People are stuck in certain concepts
+   * Other potential reasons we might discover in later analysis
 
+    In this sense, we deal with the situations separately:
 
-Do players that timeout or restart always end up in the same set of concepts ? These concepts would be considered hard to reach 
-Is the ratings related to some metric distance in the players graph (sum 1/w)
+   * We use a certain matric we find from the Player’s Graph (Graph generated from paths of players, in our case the matric could be the weighted path length to the target in the graph) or ‘semantic distance’ as proposed in the paper to identify how far people were to their goals when they quit their game.
+   * We use logistic regression to analyze the relationship between path length/duration with whether people quit the game.
+   * We combine in-degree, out-degree and number of accesses (weight in the paths’ graph) to find potential hub articles, and then deduce from each path at which stage the player quitted or there was no obvious strategy at all.
+   * We merge the nodes with the same concepts and see how the resulting graph is structured. We generate some stats (from the distribution of in-degree or out-degree, weights of edges and nodes) and then confirm or reject our hypothesis via hypothesis testing.
 
-Methods 
-Find a metric distance on the paths’ graph that makes the correspondence between this distance and the ratings 
-Find some metrics that we can use for the (multi-class) logistic regression 
-Construct a graph that ‘merge’ nodes that has the same concepts, see the internal links and how they connect to other concepts 
-Try to find if concepts are apart and hard to reach 
+    Game History refers to the history of each player’s runs, whether finished or not. We tried to get players' history in term or how their games ended up (finished, restart, timeout). Then we simply use a logistic regression to examine how much the number of previous finishes, restarts and timeouts have an influence of the next run’s quitting or not. And we can also use clustering algorithms to find patterns of player’s Game History.
+
+3. In addition, we want to have an objective metric of how hard a run is. We have the Ideal Graph and the Player’s Graph. For some games we also have the subjective rating from the player. We can consider the subjective rating as a result of objective difficulty, player’s In-Run History, player’s Game History (experience). The objective difficulty is solely the result of the positions of source and target in both graphs, assuming the graph is ‘complete’. We can make use of machine learning techniques to find the correlations and infer from them the objective difficulty.  
 
 
 ### Timeline

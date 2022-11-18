@@ -40,6 +40,7 @@ Try to find if concepts are apart and hard to reach
 
 
 ### Timeline
+- Submission 23.12.2022
 
 ### Organization within the team
 

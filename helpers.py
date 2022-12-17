@@ -68,7 +68,7 @@ def load_data() :#Articles data
     paths_unfinished = paths_unfinished[paths_unfinished.pathLength >1]
 
     #concatenate data
-    paths_all = pd.concat([paths_finished_, paths_unfinished_]) 
+    paths_all = pd.concat([paths_finished_, paths_unfinished_]).reset_index().drop('index',axis = 1)
     
     return articles, categories, links, paths_finished, paths_unfinished, paths_all, shortest_path_distance
 

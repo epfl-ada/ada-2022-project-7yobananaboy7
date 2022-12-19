@@ -59,16 +59,16 @@ def load_data() :#Articles data
     paths_finished['target'] = paths_finished['path'].apply(lambda x : str(x).split(';')[-1])
 
     #Add and remove (ir)relevant colums.
-    paths_finished_ = paths_finished.copy()
-    paths_unfinished_ = paths_unfinished.copy()
-    paths_finished_['type'] = 'finished'
-    paths_finished_ = paths_finished_.drop('rating',axis =1)
+    paths_finished = paths_finished.copy()
+    paths_unfinished = paths_unfinished.copy()
+    paths_finished['type'] = 'finished'
+    paths_finished = paths_finished.drop('rating',axis =1)
     
     paths_finished = paths_finished[paths_finished.pathLength >1]
     paths_unfinished = paths_unfinished[paths_unfinished.pathLength >1]
 
     #concatenate data
-    paths_all = pd.concat([paths_finished_, paths_unfinished_]).reset_index().drop('index',axis = 1)
+    paths_all = pd.concat([paths_finished, paths_unfinished]).reset_index().drop('index',axis = 1)
     
     return articles, categories, links, paths_finished, paths_unfinished, paths_all, shortest_path_distance
 

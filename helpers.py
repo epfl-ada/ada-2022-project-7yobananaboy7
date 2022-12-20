@@ -101,4 +101,27 @@ def get_graphs(paths_all, links):
     G_paths = nx.from_pandas_edgelist(edges, 'start_edge', 'end_edge', 'weight', create_using = nx.DiGraph)
     G_links = nx.from_pandas_edgelist(links, 'article', 'link', create_using = nx.DiGraph)
     return G_paths, G_links
-  
+
+#Function to compute the geometric mean
+def geo_mean(iterable):
+    return np.exp(np.log(iterable).mean())
+
+#Function for bootstrapping
+def bootstrap_CI(data, nbr_draws, mean, with_means = False):
+    means = np.zeros(nbr_draws)
+    data = np.array(data)
+    
+    for n in range(nbr_draws):
+        indices = np.random.randint(0, len(data), len(data))
+        data_tmp = data[indices] 
+
+        if mean == 'arithmetic':
+            means[n] = np.nanmean(data_tmp)
+
+        if mean == 'geometric':
+            means[n] = geo_mean(data_tmp)
+
+    if with_means :
+        return [np.nanpercentile(means, 2.5),np.nanpercentile(means, 97.5)], means
+    else : 
+        return [np.nanpercentile(means, 2.5),np.nanpercentile(means, 97.5)]

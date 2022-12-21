@@ -5,6 +5,17 @@ import networkx as nx
 import re
 
 def load_data() :#Articles data
+    """Load the data of Wikispedia 
+    Return:
+        a tuple with the files parsed 
+            articles : the content of each pages, 
+            categories : the categories associated to each page, 
+            links : the hyperlinks that links two pages in wikipedia, 
+            paths_finished : all the games of Wikispedia that were finished with length bigger than one, 
+            paths_unfinished : all the games of Wikispedia that were finished with length bigger than one,
+            paths_all : the concatenation of paths_finished and paths_unfinished, 
+            shortest_path_distance : the shortest path distance between all pages
+    """
     articles = pd.read_csv("data/articles.tsv", skiprows=11, names=["article"])
     articles['article'] = articles['article'].apply(urllib.parse.unquote) #Parsing URL encoding
 
@@ -73,6 +84,15 @@ def load_data() :#Articles data
     return articles, categories, links, paths_finished, paths_unfinished, paths_all, shortest_path_distance
 
 def get_graphs(paths_all, links):
+    """ Construct the players and the wikipedia graph.
+    Args:
+        paths_all : all the paths of the Wikispeedia games
+        links : the wikipedia hyperlinks between pages 
+    Return:
+        a tuple with two graphs 
+            G_paths : the graph generated from the paths the players used, 
+            G_links : the graph generated from the hyperlinks present in Wikipedia
+    """
     paths_all.insert(0, 'path_id',  paths_all.index)
     paths = paths_all[['path_id', 'path']].copy()
     paths = paths.explode('path').reset_index().rename(columns={'path': 'page', 'index' : 'page_index_in_path'})
@@ -101,13 +121,28 @@ def get_graphs(paths_all, links):
     G_paths = nx.from_pandas_edgelist(edges, 'start_edge', 'end_edge', 'weight', create_using = nx.DiGraph)
     G_links = nx.from_pandas_edgelist(links, 'article', 'link', create_using = nx.DiGraph)
     return G_paths, G_links
+  
 
-#Function to compute the geometric mean
 def geo_mean(iterable):
+    """ compute the geometric mean
+    Args:
+        iterable : the iterable we want to get the geometric mean from 
+    Return:
+        the geometric mean
+    """
     return np.exp(np.log(iterable).mean())
 
-#Function for bootstrapping
+
 def bootstrap_CI(data, nbr_draws, mean, with_means = False):
+    """ compute the 95% confidence interval for the given mean 
+    Args:
+        data : the data we want the mean from, 
+        nbr_draws : the numer of draws done for the boostraping, 
+        mean : the type of mean we want to use. 'geometric' or 'arithmetic', 
+        with_means = False : returns the means associated to the CI
+    Return:
+        the geometric mean
+    """
     means = np.zeros(nbr_draws)
     data = np.array(data)
     

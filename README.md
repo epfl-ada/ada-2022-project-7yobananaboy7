@@ -1,5 +1,4 @@
-# Milestone 3 - The tale of the unfinished paths
-*test* 
+# The tale of the unfinished paths
 
 ## Data story
 

@@ -43,7 +43,7 @@ The directory is organized according to the chapters in the webpage. Each file c
 
 In addition to that the following can be found:
    -  `Milestone_2.ipynb`: It contains the analysis done for the milestone 2.
-   -  `helpers.pyv: containing functions that are used in different files or to simplify the main files. 
+   -  `helpers.py`: containing functions that are used in different files or to simplify the main files. 
    -  `data`: folder that contains all the data from wikispeedia the project is based on as well as feature files for the in-game as well as the between game                 analyzation.
 
 

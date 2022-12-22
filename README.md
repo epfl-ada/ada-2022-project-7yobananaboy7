@@ -35,16 +35,16 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
 ## Structure of the directory
 
 The directory is organized according to the chapters in the webpage. Each file can be run individually. It contains the following notebooks:
-   -  `home`: contains all the analysis used for the home part on the webpage
-   -  between_game: contains all the analysis and feature generation done for the "Between game" chapter. 
-   -  in_game: contains all the analysis and feature generation done for the "In game" chapter
-   -  classification: contains the logistic regression and the intepretation of the logitstic regression. The feature files are saved in the folder "data" and the           classification can therefore be run individually.
-   -  conclusion: contains all the information gathered for a conclusion.
+   -  `home.ipynb`: contains all the analysis used for the home part on the webpage
+   -  `between_game.ipynb`: contains all the analysis and feature generation done for the "Between game" chapter. 
+   -  `in_game.ipynb`: contains all the analysis and feature generation done for the "In game" chapter
+   -  `classification.ipynb`: contains the logistic regression and the intepretation of the logitstic regression. The feature files are saved in the folder "data" and        the classification can therefore be run individually.
+   -  `conclusion.ipynb`: contains all the information gathered for a conclusion.
 
 In addition to that the following can be found:
-   -  Milestone_2: It contains the analysis done for the milestone 2.
-   -  helpers: containing functions that are used in different files or to simplify the main files. 
-   -  data: folder that contains all the data from wikispeedia the project is based on as well as feature files for the in-game as well as the between game                   analyzation.
+   -  `Milestone_2.ipynb`: It contains the analysis done for the milestone 2.
+   -  `helpers.pyv: containing functions that are used in different files or to simplify the main files. 
+   -  `data`: folder that contains all the data from wikispeedia the project is based on as well as feature files for the in-game as well as the between game                 analyzation.
 
 
 ### Timeline

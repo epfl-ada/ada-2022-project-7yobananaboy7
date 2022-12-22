@@ -11,8 +11,8 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
 
 ## Research questions
 
-   -  Can we set up a simple logistic model that can predict if a player is more likeli to stop the game or finish it based on the history of the games played by the         player and based on the start and target article?
-   -  How can the results of the logistic regression be included in a set-up for a gme that is likely to incentivize people to stay engaged?
+   -  Can we set up a simple logistic model that can predict if a player is more likely to stop the game or finish it based on the history of the games played by the         player and based on the start and target article?
+   -  How can the results of the logistic regression be included in a set-up for a game that is likely to incentivize people to stay engaged?
 
 
 ## Methods
@@ -35,7 +35,7 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
 ## Structure of the directory
 
 The directory is organized according to the chapters in the webpage. Each file can be run individually. It contains the following notebooks:
-   -  home: contains all the analysis used for the home part on the webpage
+   -  `home`: contains all the analysis used for the home part on the webpage
    -  between_game: contains all the analysis and feature generation done for the "Between game" chapter. 
    -  in_game: contains all the analysis and feature generation done for the "In game" chapter
    -  classification: contains the logistic regression and the intepretation of the logitstic regression. The feature files are saved in the folder "data" and the           classification can therefore be run individually.

@@ -2,7 +2,7 @@
 
 ## Data story
 
-Please visit our website [[here]](https://melsjagt.github.io/ada-template-website/)
+Please visit our website [here](https://melsjagt.github.io/ada-template-website/).
 
 ## Abstract
 

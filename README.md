@@ -22,7 +22,7 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
    - Filtering out all the games played with a pathlength >= 1
 - Between-Game history: To analyze the history of a certain player, the hashedUsersId gets grouped and analyzed further.
    - Preanalyzation answering the following questions:
-      - How many people got unfinished/finished paths? 
+      - How many people got unfinished/finished paths? An unfinished path is in the following always considering timeout and restart.
       - How is the pathlength associated with the fraction of finished games?
       - Has the number of finished games an influence on the behaviour of the last game?
    -  Find interesting features based on the analysis for the logistic regression.

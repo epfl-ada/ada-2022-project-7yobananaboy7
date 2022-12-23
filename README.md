@@ -17,6 +17,8 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
 
 ## Methods
 
+### General
+
    -  Preprocessing of the data
       -  Filtering out all the games played with a pathlength >= 1
    -  Between-Game history: To analyze the history of a certain player, the hashedusersId gets grouped and analyzed further.
@@ -31,6 +33,25 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
       -  Trying to answer the question how likeli the player will quit the game?
    -  Based on the features a logitstic regression is built
    -  The logitstic regression together with the analyzing parts in the in-game and between game history help find a conclusion and to propose a set-up to a game that       is likely to incentivize people to stay engaged. 
+   
+   
+### External lybraries
+
+The following external lybraries are used for the analysis:
+
+   -  matplotlib.pyplot
+   -  itertools.groupby
+   -  seaborn
+   -  pandas
+   -  os
+   -  numpy
+   -  sklearn
+   -  statsmodels.formula.api
+   -  scipy.stats
+   -  networkx
+   -  re
+   -  urllib
+
 
 ## Structure of the directory
 
@@ -47,7 +68,7 @@ In addition to that the following can be found:
    -  `data`: folder that contains all the data from wikispeedia the project is based on as well as feature files for the in-game and the between game                       analyzation.
 
 
-### Timeline
+### Timeline (do we want to include that?)
 1. Finish preprocessing 30.11
 1. Find new interesting features about the runs for the regressions. 30.11
 1. Find what are the hubs pages 30.11

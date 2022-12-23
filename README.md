@@ -53,7 +53,7 @@ The following external lybraries are used for the analysis:
 
 ## Structure of the directory
 
-The directory is organized according to the chapters in the webpage. Each file can be run individually. It contains the following notebooks:
+The directory is organized according to the chapters in the webpage (except for Conclusion). Each file can be run individually. It contains the following notebooks:
 
 - `1. Home.ipynb`: First we look at the history of each player, get indight on the data and the motivation on why there is a big potential that players play more and therefore that we can get more data 
 - `2. Between_game.ipynb`: In this notebook we look at the history of the players, how many resulted in a finished game and how long was the tale of unfinished paths before the last game. We also look at the success streak and the time between the first and last game.

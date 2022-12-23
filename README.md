@@ -56,7 +56,7 @@ The following external lybraries are used for the analysis:
 The directory is organized according to the chapters in the webpage. Each file can be run individually. It contains the following notebooks:
 
 - `1. Home.ipynb`: First we look at the history of each player, get indight on the data and the motivation on why there is a big potential that players play more and therefore that we can get more data 
-- `2. Between_game.ipynb`: In this notebook we look at the history of the players, how many games they played and how many resulted in a finished game. We also look at the success streak and the time between the first and last game.
+- `2. Between_game.ipynb`: In this notebook we look at the history of the players, how many resulted in a finished game and how long was the tale of unfinished paths before the last game. We also look at the success streak and the time between the first and last game.
 - `3. In_game.ipynb`: We then look at each game separatly and understand what make a specific game hard or easy. We analyse the impact of the starting and target page and in which categories players can get stuck during their game. We also discussed about the path and distance to the target in each run and how it influences the result and the motivation of the player.
 - `4. Classification.ipynb`: The logistic regression is done with the features gathered from the two previous parts and the intepretation of the logitstic regression is done. The feature files are saved in the folder "data" and the classification can therefore be run individually.
 - `5. Conclusion.ipynb`: All the information gathered for a conclusion.

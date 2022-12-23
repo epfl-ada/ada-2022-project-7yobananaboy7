@@ -29,10 +29,10 @@ Wikispeedia is an online game based on Wikipedia. A player has to reach an artic
       -  Find interesting features based on the analysis for the logistic regression.
    -  In-game history: Analysis per game to try to understand what makes a player finish or not.
       -  Preprocessing: Building two graphs from the data provided. One graph is the path's graph (or reffered to as Player's Graph). It is a weighted directional              graph derived from the paths the players took. The edge weight is the number of occurences the path has been taken. The other graph is the ideal graph (or              referred to as  Machine’s Graph). It is generated from the links of different articles. Initial analysis suggests the graphs are very different.
-      -  Generate feature fot the logistic regression: For categories, the in and out degrees and the possibility to be stuck in those categories were examined. Then,          a score for each was generated, indicating if this is a good category to begin or end with.
-      -  Trying to answer the question how likeli the player will quit the game?
+      -  Generate features fot the logistic regression: For categories, the in and out degrees and the possibility to be stuck in those categories were examined. Then,          a score for each was generated, indicating if this is a good category to begin or end with.
+      -  Trying to answer the question how likely the player will quit the game?
    -  Based on the features a logitstic regression is built
-   -  The logitstic regression together with the analyzing parts in the in-game and between game history help find a conclusion and to propose a set-up to a game that       is likely to incentivize people to stay engaged. 
+   -  The logitstic regression together with the analyzing parts in the in-game and between game history help to find a conclusion and to propose a set-up for a game         that is likely to incentivize people to stay engaged. 
    
    
 ### External lybraries

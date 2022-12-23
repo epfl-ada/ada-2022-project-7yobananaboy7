@@ -80,6 +80,4 @@ In addition to that the following can be found:
 1. Submission 23.12
 
 ### Contribution of the team members
-
-
-
+TODO
